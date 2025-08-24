@@ -1,5 +1,5 @@
 import unittest
-from perplexity import PerplexityClient
+from llm_client.perplexity import PerplexityClient
 import json
 from pydantic import BaseModel
 from typing import List

@@ -12,7 +12,7 @@ with open("requirements.txt", "r", encoding="utf-8") as fh:
 
 setup(
     name="llm-apis",
-    version="0.1.0",
+    version="0.1.1",
     author="LLM APIs Team",
     author_email="your-email@example.com",
     description="A unified wrapper for various LLM provider APIs",
