@@ -19,7 +19,9 @@ setup(
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/your-username/llm-apis",
-    packages=find_packages(),
+    packages=find_packages(
+        exclude=["test*", "tests*", "*.tests", "*.test*"]
+    ),
     classifiers=[
         "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
