@@ -24,9 +24,3 @@ class PerplexityClient:
             }
         )
         return response.json()
-
-if __name__ == '__main__':
-    # Test case
-    client = PerplexityClient()
-    result = client.send_prompt("What are the major AI developments and announcements from today across the tech industry?")
-    print(result)
