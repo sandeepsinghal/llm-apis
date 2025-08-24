@@ -6,15 +6,24 @@ class PerplexityClient:
         self.api_key = api_key or os.getenv('PERPLEXITY_API_KEY')
         self.api_url = 'https://api.perplexity.ai/chat/completions'
 
-    def send_prompt(self, prompt, model='sonar-pro', json_schema=None):
+    def send_prompt(self, prompt, model='sonar-pro', json_schema=None, system_prompt=None):
+
+        messages = []
+        
+        if system_prompt:
+            messages.append({
+                'role': 'system',
+                'content': system_prompt
+            })
+            
+        messages.append({
+            'role': 'user',
+            'content': prompt
+        })
+        
         payload = {
             'model': model,
-            'messages': [
-                {
-                    'role': 'user',
-                    'content': prompt
-                }
-            ]
+            'messages': messages
         }
 
         if json_schema is not None :
